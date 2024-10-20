@@ -23,7 +23,6 @@ lowest-common-denominator to describe everything else.
   - A special case of function-with-side-effects whose list of
     possible effects is empty
   - Single argument, single return value
-    - Others can be mapped to this
   - Multiple, possibly named arguments
   - Multiple, possibly named return values
     (think continuation passing style; returning and calling are the same kind of thing)
@@ -31,11 +30,18 @@ lowest-common-denominator to describe everything else.
   - Which can be thought of as functions that take a stack and return a stack,
     with or without side-effects
 - Stream processes
-  - `() ->{Read,Write} Int32`
+  - `ProtoProcess = () ->{Read,Write,...} Int32`
   - Those that eat bytes, emit bytes, and finally exit with some error code
     - Like an OS process, but without side-effects
   - Those that do all that but can also have other effects
     - Basically like an OS process
+- Commands
+  - In the spirit of shell or Tcl commands
+  - `List String -> Map String String -> ProtoProcess`,
+    i.e. a function that takes a list of arguments (`argv`)
+    and environment variable values and returns
+    some representation of a a process
+    that can be executed any number of times.
 
 
 ### Choice of programming language
