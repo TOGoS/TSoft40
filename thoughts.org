@@ -1,0 +1,81 @@
+#+TITLE: Random Thoughts
+
+** Idea: TEF Processor Directive
+
+A way to mark at the top of TEF files (and maybe other formats)
+that indicates a program that can process the file
+and translate it to some other format, like Turtle.
+
+Sort of like a shebang line, but:
+- More than one can be specified
+- Programs are indicated in a host-agnostic way
+
+What this header would say is something like
+
+#+begin_quote
+To translate this into a turtle document,
+pipe it into the program ~XYZ123~ with arguments ~--foo=bar~ and ~--output-format=turlte~.
+#+end_quote
+
+Which might look like...
+
+#+begin_src tef
+tef:converters/turtle: XYZ123 --foo=bar --output-format=turtle
+#+end_src
+
+A standard command format would serve this purpose.
+
+** A language for commands
+:PROPERTIES:
+:CUSTOM_ID: f12b16cc-875a-4301-8bf8-fe7f857bdcbe
+:END:
+
+*** Syntax
+
+See also: thoughts on 'common syntax' in [[https://github.com/TOGoS/TScript34][TScript34's README]].
+
+Supeficially similar to Bash or Tcl syntax.
+
+- Whitespace-separated tokens.
+- Backslash for escaping otherwise-special characters
+- Double quotes can be used to quote strings
+- Dollar sign is used for variable substitution and
+- Curly braces and parentheses can be used similar to how they are in Bash
+- Blank lines and lines 
+
+Some characters are reserved for extensions;
+when in doubt, quote tokens.
+
+- ~#~, ~'~ or ~`~, ~*~ at the beginning of a token is reserved
+- Single-character bare tokens consisting of parentheses, square brackets, and curly braces are reserved
+- Fancy unicode quotes also reserved.
+  [[https://github.com/TOGoS/TOGVM-Spec/blob/master/test-vectors/tokens/quotes.txt][TOGVM-Spec]] and/or [[https://github.com/TOGoS/SchemaSchema/blob/master/src/togos/schemaschema/parser/Tokenizer.java][SchemaSchema]] may give examples
+  of how each kind is to be interpreted.
+  - Angle quotes seem to mean nestable, but no escape sequences
+  - In general, quote types come in pairs, where single and double
+    quotes have the same tokenization rules, but differ in semantics;
+    single quoted text is treated as a symbol, whereas double-quoted text
+    is treated as a literal string; in the case of this shell-like language
+    that distinction would not make sense, since all text is literal
+    and needs a ~$~ to indicate anything else.
+
+Commands are identified by URI.
+JCR36 and TScript34-P0019 define some already.
+
+
+*** Tentatively
+
+(which is why some things are 'reserved')
+
+- Unlike Bash Variable expansion happens *after* tokenization.
+  - Use ~*~ to 'splat' a token
+    ~foo *"bar baz"~ is the same as ~foo bar baz~
+- Parentheses indicate sub-expressions
+- Square brackets make a list
+- Curly braces make a code block
+
+'lists' and 'code blocks' in a language where all values are representable as strings
+(similar to Tcl) implies some canonical conversion.
+
+So a hypothetical command like ~if { a ; b ; c } then { whatever } else { whatever-else } end~
+would actually be converted to ~if some-encoding-of-a-then-b-then-c then some-encoding-of-whatever~ yaddah yaddah.
