@@ -17,10 +17,13 @@ To translate this into a turtle document,
 pipe it into the program ~XYZ123~ with arguments ~--foo=bar~ and ~--output-format=turlte~.
 #+end_quote
 
+It's implied that the program's standard input and output are used to
+read the TEF and write the converted output, respectively.
+
 Which might look like...
 
 #+begin_src tef
-tef:converters/turtle: XYZ123 --foo=bar --output-format=turtle
+tef:converters/to-turtle: XYZ123 --foo=bar --output-format=turtle
 #+end_src
 
 A standard command format would serve this purpose.
@@ -47,7 +50,11 @@ Some characters are reserved for extensions;
 when in doubt, quote tokens.
 
 - ~#~, ~'~ or ~`~, ~*~ at the beginning of a token is reserved
-- Single-character bare tokens consisting of parentheses, square brackets, and curly braces are reserved
+- Some single-character tokens are reserved:
+  - ~;~
+  - ~(~ and ~)~
+  - ~{~ and ~}~
+  - ~[~ and ~]~
 - Fancy unicode quotes also reserved.
   [[https://github.com/TOGoS/TOGVM-Spec/blob/master/test-vectors/tokens/quotes.txt][TOGVM-Spec]] and/or [[https://github.com/TOGoS/SchemaSchema/blob/master/src/togos/schemaschema/parser/Tokenizer.java][SchemaSchema]] may give examples
   of how each kind is to be interpreted.
@@ -62,6 +69,19 @@ when in doubt, quote tokens.
 Commands are identified by URI.
 JCR36 and TScript34-P0019 define some already.
 
+*** Some examples
+
+Print "Hello, world!":
+
+#+begin_src
+http://ns.nuke24.net/JavaCommandRunner36/Action/Print "Hello, world!"
+#+end_src
+
+Same, but encoding the text to be printed as a URI:
+
+#+begin_src
+http://ns.nuke24.net/JavaCommandRunner36/Action/Cat "data:,Hello,%20world!"
+#+end_src
 
 *** Tentatively
 
@@ -79,3 +99,16 @@ JCR36 and TScript34-P0019 define some already.
 
 So a hypothetical command like ~if { a ; b ; c } then { whatever } else { whatever-else } end~
 would actually be converted to ~if some-encoding-of-a-then-b-then-c then some-encoding-of-whatever~ yaddah yaddah.
+
+*** TODO Make a project with test vectors
+
+- [ ] Basic commands (echo, exit)
+- [ ] Invoke Deno scripts
+- [ ] Execute URN-named Jar files.
+
+*** TODO For proper 'scripting'
+
+- [ ] Define some 'operator' commands, like ~if~,
+  that take an entire program and run it
+
+*** TODO Proof-of-concept interpreter
