@@ -84,6 +84,16 @@ They can always be aliased together later.
 Can use names like `http://ns.nuke24.net/X-2024/Whatever` as placeholders.
 
 
+## Terminology
+
+- project (task) :: a set of tasks to be completed
+- projbase, project (codebase) :: a versioned set of files, usually stored in one or more Git repositories
+- TEF :: [TOGoS's Entry Format](https://github.com/TOGoS/TEF), a relatively human and machine-readable/writable
+  format for storing arbitrary information in a loosely-structured way
+- TSV :: Tab-separated values; I have my own dialect that I follow, which is
+  itself a line-oriented 'hash-format'
+
+
 ## Links
 
 ### RDF concepts
@@ -92,6 +102,9 @@ Can use names like `http://ns.nuke24.net/X-2024/Whatever` as placeholders.
   which should probably be moved into this repository.
 - [TOGVM](https://github.com/TOGoS/TOGVM-Spec)
   - RDF types and predicates for describing functional programs
+
+TODO: Consolidate all of them!
+
 
 ### File formats
 
