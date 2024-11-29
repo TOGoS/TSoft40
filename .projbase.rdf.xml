@@ -4,8 +4,8 @@
 	xmlns:project="http://ns.nuke24.net/X-2024/Project/"
 	rdf:about="urn:oid:1.3.6.1.4.1.44868.261.40"
 >
-	<dc:name>TSoft40</dc:name>
-	<dc:name>TOGSOFT-40</dc:name>
+	<dc:title>TSoft40</dc:title>
+	<dc:title>TOGSOFT-40</dc:title>
 	<project:projbaseName>TOGoS/docs/TSoft40</project:projbaseName>
 	<dc:description>
 		Documentation about 'The TOGoS Software System',

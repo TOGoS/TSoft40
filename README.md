@@ -75,7 +75,18 @@ Software Project', but using high numbers with lots of digits
 for probably-throwaway things.
 
 
-### Naming things
+### Projbase Metadata
+
+An RDF+XML file called ".projbase.rdf.xml" in a project directory
+can hold some metadata about the project.  The root element
+of that file should describe a `http://ns.nuke24.net/X-2024/Project/Projbase`,
+and might include attributes like `http://ns.nuke24.net/X-2024/Project/projbaseName`,
+`http://purl.org/dc/terms/title`, and `http://purl.org/dc/terms/description`
+
+See https://www.nuke24.net/docs/ns/namespaces.tef for more terms.
+
+
+### Naming Things
 
 Generate UUIDs or OIDs for new concepts
 rather than coming up with a 'nice' name right away.
