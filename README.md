@@ -95,6 +95,59 @@ They can always be aliased together later.
 Can use names like `http://ns.nuke24.net/X-2024/Whatever` as placeholders.
 
 
+### Backups
+
+Want to back up a bunch of data from friends/family/yourself?
+
+First of all, *don't* spend too much time trying to curate what gets archived or not.
+This will result in failing to actually do the backups.
+
+*Do* use a content-addressing datastore for storing files.
+This way you can back up a file any number of times without using up additional disk space.
+
+*Do* buy some large hard drives and maybe some M-discs and a writer.
+
+Procedure:
+- Give the original media/partition a name.
+  - e.g. WSITEM-3334.5 is a partition on WSITEM-3334, an SSD I bought in 2024.
+  - Set the partition label to that name, or some shorthand,
+    and possibly add a .partition-info.txt or something in the root to help identify it
+    or provide other information 10-years-from-now you might wwant to know.
+- Generate a manifest of the files using `ccouch3 walk-fs`.
+  - I like to store these on the partition as `/manifests/<name>-<subdir>-<date>.manifest`,
+    e.g. `WSITEM-202003.1-DCIM-20260207T1336.manifest`.
+  - Feel free to only include certain files/directories, but it's also fine to go ahead
+    and include everything, including earlier manifests
+- Store the manifests in CCouch.
+  - I use the `file-manifests` sector for this.
+- Reference manifests in a central location.
+  - I have a `FileManifests` Git repo, but these files can be so large that they cause problems for Git.
+    _It might be better to store them in CCouch and just reference them by hash from a central Git repo._
+    i.e. _I don't yet have a specific way to do this._
+- Back up individual files to CCouch.
+  - Don't worry about cleaning up the directory structure, first
+  - If it's too much trouble, don't even worry about storing the directory structure;
+    you've already recorded exactly what was on this in the manifest.
+  - _todo: improve CCouch tooling to be able to, like, weak-ignore some files; reference them but don't copy._
+- Write collections of files to M-disc or other ROM.
+  - If not too inconvenient, include the manifest (under `/manifests/`),
+    the CCouch tree or directory URI (in `/.ccouch-uris` or `/.commit-uris`, respectively),
+    any CCouch directory data (under `/.ccouch/data/`).
+  - Feel free to include *other* manifests and other data in those directories, too.
+    An updated manifest for this partition should include all of it.
+- Store the manifest for your M-discs in your central manifest repository, also.
+
+Then, later on, you can:
+- Write a tool to index all the manifests and CCouch directory data
+  and help you find out what files are available where
+  - _As of 2026-02-10, I have been meaning to build this tool for a few years, but have not yet done so.
+    Presumably it will tie into TOGETL somehow._
+- In lieu of nice tool, grep through manifests.
+
+
+_TODO: how to back up Git repos or similar structures that do their own content addressing/deduplication?_
+
+
 ## Terminology
 
 - project (task) :: a set of tasks to be completed
