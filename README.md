@@ -88,11 +88,33 @@ See https://www.nuke24.net/docs/ns/namespaces.tef for more terms.
 
 ### Naming Things
 
-Generate UUIDs or OIDs for new concepts
+Generate UUID, OID, or tag URIs for new concepts
 rather than coming up with a 'nice' name right away.
 They can always be aliased together later.
 
-Can use names like `http://ns.nuke24.net/X-2024/Whatever` as placeholders.
+Current recommendation is when you need a quick name,
+make up a tag like `tag:nuke24.net,2026-08-01:aQuickName`
+
+I no longer recommend names like `http://ns.nuke24.net/X-2024/Whatever`
+for experimental namespaces.
+I'm not sure whether it makes sense to 'graduate' names, either,
+on the basis that it's easier and simpler to just make up a tag
+and stick with it forever.  Don't over-think this.
+
+#### Software projects
+
+Projects with a 'TOGSOFT' number can be referred to by OID,
+like `urn:oid:1.3.6.1.4.1.44868.261.40`,
+or by `TOGSOFT-` + number, like `TOGSOFT-40`.
+
+Sometimes I tack the TOGSOFT project number onto a different name,
+e.g. `TScript34` could alternatively be referred to as `TOGSOFT-34`.
+Beware that not all numbers following project names are TOGSOFT numbers,
+e.g. the '2021' in `TOGoSArduinoLibs2021` is just the year I started the project.
+
+In some contexts I will arbitrarily decide to use a different format.
+e.g. [tsoft1008](https://jsr.io/@togos/tsoft1008) (formerly 'tdxml' package within SynthGen2100).
+So that may be the convention for JSR libraries that I don't have a better name for.
 
 
 ### Backups
