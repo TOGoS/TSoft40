@@ -3,7 +3,7 @@
 Specifications for data formats, RDF concepts,
 conventions for starting projects, and so on.
 
-- README.md (this file) :: Generatel high-level description of my approach
+- README.md (this file) :: General high-level description of my approach
   and the overall trans-project architecture I have in mind.
 - [AGENT-STARTER.md](./AGENT-STARTER.md) ::
   A starting point at which to point coding agents to
