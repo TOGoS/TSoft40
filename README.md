@@ -29,7 +29,7 @@ decide how to interpret them based on header names or other context).
 
 [SharpFormats](https://www.nuke24.net/docs/2025/SharpFormat.html) is a family of
 text-based formats sharing some characteristics, such as "`#`"-prefixed directives,
-"`# `"-prefixed (note the space) comments, and a `"#format " + URI identifier of the files's formt` line at the top.
+"`# `"-prefixed (note the space) comments, and a `"#format " + URI identifier of the file's format` line at the top.
 
 [TSVFileManifestV1](https://www.nuke24.net/docs/2024/TSVFileManifestV1.html) is a lightweight
 SharpFormat/TSV-based format for recording filesystem or directory snapshots
@@ -90,7 +90,7 @@ I am, as of 2026-11, following the general rule of choosing either:
   Deno's explicit permissions are quite useful
 
 I sometimes use Idris to flesh out the ontology of a system
-since it has such a expressive type system, and also just
+since it has such an expressive type system, and also just
 because I like the idea of dependent types and want to master thinking in those terms.
 
 
