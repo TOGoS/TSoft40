@@ -16,6 +16,24 @@ conventions for starting projects, and so on.
 [Turtle](https://www.w3.org/TR/turtle/)?
 Though ContentCouch uses RDF+XML.  But XML is a pain to deal with.
 
+[TOGETLTSV](https://www.nuke24.net/docs/2026/TOGETLTSV202601.html) is intended
+as a very simple-to-parse RDF syntax that includes 'provenance' information for each statement
+(i.e. what system derived this, and from what sources, which themselves may have
+derived it from something else).
+
+[TEF](https://github.com/TOGoS/TEF) is a multipart MIME-inspired format with relatively
+well defined syntax that leaves higher-level structures and semantics to the application
+(as opposed to something like YAML, where Norway can become a boolean,
+TEF treats everything as literal strings, and the application needs to
+decide how to interpret them based on header names or other context).
+
+[SharpFormats](https://www.nuke24.net/docs/2025/SharpFormat.html) is a family of
+text-based formats sharing some characteristics, such as "`#`"-prefixed directives,
+"`# `"-prefixed (note the space) comments, and a `"#format " + URI identifier of the files's formt` line at the top.
+
+[TSVFileManifestV1](https://www.nuke24.net/docs/2024/TSVFileManifestV1.html) is a lightweight
+SharpFormat/TSV-based format for recording filesystem or directory snapshots
+(it could be used as an alternative to CCouch's RDF+XML representation of `Directory` objects).
 
 ### Process concepts
 
