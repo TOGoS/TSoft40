@@ -1,6 +1,13 @@
 # TOGSOFT-40: The TOGoS Software System
 
-Specifications for data formats, RDF concepts, and such.
+Specifications for data formats, RDF concepts,
+conventions for starting projects, and so on.
+
+- README.md (this file) :: Generatel high-level description of my approach
+  and the overall trans-project architecture I have in mind.
+- [AGENT-STARTER.md](./AGENT-STARTER.md) ::
+  A starting point at which to point coding agents to
+  get them started either on an existing project or to bootstrap a new one.
 
 ## Gernal approach
 
