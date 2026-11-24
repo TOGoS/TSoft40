@@ -56,23 +56,30 @@ E.g.
 ### Line-wrapping
 
 When authoring text documents -- including Git commit messages --
-follow these line-wrapping conventions:
+treat long lines as a signal to wrap, not a violation to fix.
+These conventions apply to text you are writing now;
+do not re-wrap existing lines merely to conform to them.
 
-- Aim to keep line lengths below about 75 characters;
-  this is a soft limit; 90 may be a reasonable 'firm' limit;
-  there is no 'hard' limit since there will sometimes be single tokens
-  that will go beyond that regardless of how early in the line they are started,
-  in which case the line will be long and if there is a short (less than about 20-character)
-  prefix (e.g. `- Look at this URL: `), don't bother splitting that line before the long token.
-- Prefer to split between coherent sentence clauses.
-  After a period is generally a good idea unless the sentences are very short.
-- Parenthesized clauses and those beginning with "and", "or", "that", "which", etc.
-  are good candidates before and/or after which to break lines.
-- 75 is a soft limit; it's better to have a cohesive 85-character
-  sentence than one split into 65- and 20-character lines.
-- It's better to split as you go, risking short and long lines here and there,
-  than to strain to follow these suggestions perfectly.
-
+- As a line passes about 75 characters, the thought "this is getting long"
+  should weigh more and more heavily on your mind,
+  and you should take the next good opportunity to break.
+  Approaching 90, breaking is nearly always the right call.
+- There is no 'hard' limit: a single long token (e.g. a URL) can
+  blow past any target regardless of where the line starts, and that's fine.
+  If the prefix before such a token is short
+  (under about 20 characters, e.g. `- Look at this URL: `),
+  don't bother splitting the line before the long token.
+- Prefer to break between coherent sentence clauses, and after a
+  period unless the sentences are very short.
+  Parenthesized clauses, and clauses beginning with "and", "or", "that", "which", etc.,
+  are good spots to break before or after.
+- Cohesion beats counting: a single 85-character sentence reads better
+  than the same sentence split into 65- and 20-character lines.
+- Split as you go, risking short and long lines here and there,
+  rather than straining to follow these suggestions perfectly.
+  (Eventually a small tool may wrap generated Markdown
+  mechanically, so agents needn't choose break points at all;
+  until then, this guidance is meant to stay light.)
 
 ## Formatting source code
 
