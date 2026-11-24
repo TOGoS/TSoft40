@@ -7,7 +7,7 @@ Do not reformat existing code unless it is being changed for other reasons,
 for consistency with other lexically-nearby changes,
 or because the architect specifically asked for reformatting.
 
-Do reformat existing source files that are being significanly rewritten anyway
+Do reformat existing source files that are being significantly rewritten anyway
 (as a rule of thumb, let's say: when more than about half the lines changed).
 
 Ideally formatting would be done mechanically by a formatting tool.
@@ -23,8 +23,8 @@ As of this writing we don't yet have one in place.
 - When using `Map`s to represent objects, an `info` suffix is often appropriate.
   - e.g. `Map<String,Object> makeErrorInfo(...)`
   - This pattern is common in health/deployment info endpoints
-    in cases where we elide more stronly-typed representations for one-off bits of detail,
-	since the JSON-encoding functions we use operate on `Map`s and `List`s.
+    in cases where we elide more strongly-typed representations for one-off bits of detail,
+    since the JSON-encoding functions we use operate on `Map`s and `List`s.
 - Omit qualifiers only when the surrounding context or convention already makes their meaning clear,
   e.g. a list of constants inside a `FooPaths` class may omit a `_PATH` suffix that would
   otherwise be expected.
@@ -74,7 +74,10 @@ The outermost methods, e.g. those that implement an interface,
 - Use tabs for indentation in Java source files.
 - Use spaces only for alignment after tabs if needed.
 - Preserve indentation on blank lines inside blocks; a blank line should still carry the block's indent.
-- The repository config is in [.editorconfig](./.editorconfig).
+- The machine-readable form of these settings, when it exists, is a
+  `.editorconfig` at the root of the repository whose code you are
+  editing.  Repositories following this guide usually have one, but
+  this docs project does not; there is nothing to link to here.
 
 ### Indentation
 
@@ -86,7 +89,7 @@ For example:
 - Methods, especially constructors, that take more than one argument may give each argument its own line
   'for clarity'
 - Trivial getters should usually be reduced to a single line,
-  since that line line contains a lot of redundant information.
+  since that line contains a lot of redundant information.
 
 There is no perfect way to format throws clauses;
 just try to avoid excessive indentation.

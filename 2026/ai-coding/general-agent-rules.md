@@ -78,7 +78,7 @@ follow these line-wrapping conventions:
 
 (To extend the general text document formatting suggestions.)
 
-These guidelines may be superceded depending on context.
+These guidelines may be superseded depending on context.
 e.g. in projects that use a language's standard formatter (e.g. `rust fmt`),
 let the formatter decide.
 
@@ -123,7 +123,7 @@ such as inconsistent casing of acronyms (`idVsID`) or butt-ugliness (`iDOfMyDog`
     e.g. to ensure vertical alignment between parts of an outer and inner block,
     after tabs for their shared indentation.  LLM agents should not try
     to apply this style, but they should accept it as valid if they find it.
-- Use one level of indent not only for curly-brace-delimited bocks,
+- Use one level of indent not only for curly-brace-delimited blocks,
   but also for syntactically block-like structures,
   e.g. parameter lists where groups of parameters (often of size 1) get their own line.
 - In general, an 'indented block' for formatting purposes starts
@@ -152,7 +152,7 @@ foo( ['bar', 'baz', {
 }])
 ```
 
-Alterntively we could give those first to elements of the list their own lines,
+Alternatively we could give those first two elements of the list their own lines,
 in which case the square brackets start
 a new level of indent, and the curly braces start another:
 
@@ -221,7 +221,7 @@ that can be pulled from without risking re-use of a given ID.
 If you need to independently 'mint' an ID and such a file exists,
 remove one line from it and use that.
 
-Sometimes there me a table of IDs / meanings / reservations,
+Sometimes there may be a table of IDs / meanings / reservations,
 in which case rather than removing one you should fill in
 the appropriate column to mark it as taken and document its meaning.
 
