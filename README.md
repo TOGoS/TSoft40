@@ -9,10 +9,7 @@ conventions for starting projects, and so on.
   A starting point at which to point coding agents to
   get them started either on an existing project or to bootstrap a new one.
 
-## Gernal approach
-
-(untested advice to self as of 2024-10-19):
-
+## General approach
 
 ### Common data formats
 
