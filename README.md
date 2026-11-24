@@ -16,8 +16,10 @@ conventions for starting projects, and so on.
 
 ### Common data formats
 
-- [Turtle](https://www.w3.org/TR/turtle/) :: a possibility;
-  though ContentCouch uses RDF+XML, and XML is a pain to deal with.
+- [RDF+XML](https://www.w3.org/TR/rdf-syntax-grammar/) ::
+  A reasonable default RDF representation if you can get past what a pain it is to parse XML.
+  - Used by ContentCouch to represent directory and commit objects.
+- [Turtle](https://www.w3.org/TR/turtle/) :: a reasonable simpler alternative to RDF+XML.
 - [TOGETLTSV](https://www.nuke24.net/docs/2026/TOGETLTSV202601.html) ::
   a very simple-to-parse RDF syntax that includes 'provenance'
   information for each statement
@@ -26,18 +28,16 @@ conventions for starting projects, and so on.
 - [TEF](https://github.com/TOGoS/TEF) :: a multipart MIME-inspired format
   with relatively well-defined syntax that leaves higher-level structures
   and semantics to the application.
-  - Unlike YAML, where "Norway" can become a boolean, TEF treats
-    everything as literal strings, and the application needs to
-    decide how to interpret them based on header names or other context.
+  - Unlike YAML, where "Norway" can become a boolean,
+    TEF treats everything as literal strings.
+	Any additional parsing and/or meaning needs to be defined by the application.
 - [SharpFormats](https://www.nuke24.net/docs/2025/SharpFormat.html) ::
-  a family of text-based formats sharing some characteristics, such as
-  "`#`"-prefixed directives, "`# `"-prefixed (note the space) comments,
+  a family of text-based formats sharing some characteristics,
+  such as "`#`"-prefixed directives, "`# `"-prefixed (note the space) comments,
   and a `"#format " + URI identifier of the file's format` line at the top.
 - [TSVFileManifestV1](https://www.nuke24.net/docs/2024/TSVFileManifestV1.html) ::
-  a lightweight SharpFormat/TSV-based format for recording filesystem
-  or directory snapshots
-  (it could be used as an alternative to CCouch's RDF+XML representation
-  of `Directory` objects).
+  a lightweight SharpFormat/TSV-based format for recording filesystem or directory snapshots
+  (and a potential alternative representation for CCouch's `Directory` objects).
 
 ### Process concepts
 
