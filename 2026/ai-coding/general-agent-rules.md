@@ -44,7 +44,7 @@ Avoid redundant documentation -- it becomes confusing when things change.
 
 ## Text file conventions
 
-- Text files are UTF-8 with LF line endings and a final newline.
+Text files are UTF-8 with LF line endings and a final newline.
 
 ### Fancy unicode characters
 
@@ -73,7 +73,10 @@ follow these line-wrapping conventions:
 - It's better to split as you go, risking short and long lines here and there,
   than to strain to follow these suggestions perfectly.
 
-### Formatting source code
+
+## Formatting source code
+
+(To extend the general text document formatting suggestions.)
 
 These guidelines may be superceded depending on context.
 e.g. in projects that use a language's standard formatter (e.g. `rust fmt`),
@@ -89,7 +92,29 @@ which applies to languages with C-like syntax
 Lisp-like languages or those from other families, also)
 is as follows:
 
-#### Tabs and indentation
+### Identifier formatting
+
+In new code, use the convention described by [TOGoS](http://www.nuke24.net/docs/2018/CamelCase.html).
+
+`UpperCamelCase` for class names and so on.
+Rule: Upper-case the first letter of each word, then smash the words together.
+Implication: acronyms stay capitalized.
+
+`lowerCamelCase` for variables, method names, and so on.
+Rule: lower-case all words, upper-case the first letter of all but the first, then smash them together.
+Implication: acronyms become lower-case except for the first letter when not the first word.
+
+For constants, upper-case and join with underscores.  This is the usual convention.
+
+Examples:
+- "XML HTTP request" (english) would become `XMLHTTPRequest` (class name), or `xmlHttpRequest`
+- "ID of user's XML document" (not a name we'd actually use, but just for examples' sake)
+  would become `IDOfUsersXMLDocument` as a type name and `idOfUsersXmlDocument` as a field/variable name.
+
+This convention avoids problems that other conventions suffer from,
+such as inconsistent casing of acronyms (`idVsID`) or butt-ugliness (`iDOfMyDog`).
+
+### Tabs and indentation
 
 - "[Smart tabs](https://www.nuke24.net/docs/2012/Tabs.html)" for indentation;
   i.e. one tab per level of indent, and spaces for vertical alignment
@@ -112,7 +137,7 @@ is as follows:
   since plain formatters often strip it.
   Use the project's formatting task rather than running the raw formatter directly.
 
-#### Block indentation examples
+### Block indentation examples
 
 For compactness, we let the first two elements sit on
 the same line as the opening brace of the third:
