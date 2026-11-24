@@ -8,6 +8,9 @@ conventions for starting projects, and so on.
 - [AGENT-STARTER.md](./AGENT-STARTER.md) ::
   A starting point at which to point coding agents to
   get them started either on an existing project or to bootstrap a new one.
+- Dated `YYYY/` subdirectories :: working material, namespaced by year so
+  the root stays uncluttered; the year hints at *creation* date, so
+  `2026/` stuff is fair game in 2030 (and beyond)
 
 ## General approach
 
@@ -85,7 +88,8 @@ If nothing else, Perl is *interesting*.
 
 As much as I like the idea of custom languages and Unison-like guarantees,
 I am, as of 2026-11, following the general rule of choosing either:
-- Java [1.8] for maximum portability
+- Java (often deliberately targeting old JREs such as 1.8 or,
+  in some cases, even 1.6), for maximum portability
 - TypeScript (via Deno) for maximum development speed, and because
   Deno's explicit permissions are quite useful
 
