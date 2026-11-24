@@ -83,18 +83,32 @@ trying to build.
 As of 2024-10-19 I am on a [Raku](https://raku.org/) (formerly 'Perl 6') kick.
 If nothing else, Perl is *interesting*.
 
+As much as I like the idea of custom languages and Unison-like guarantees,
+I am, as of 2026-11, following the general rule of choosing either:
+- Java [1.8] for maximum portability
+- TypeScript (via Deno) for maximum development speed, and because
+  Deno's explicit permissions are quite useful
+
+I sometimes use Idris to flesh out the ontology of a system
+since it has such a expressive type system, and also just
+because I like the idea of dependent types and want to master thinking in those terms.
+
 
 ### Where to put 'scratch' projects
 
-Make a new sub-project of Scratch38.  Start here.
+A good default: Make a new sub-project of Scratch38.
 
-TScript34 has a lot of random sub-projects, too.
+TScript34 has a lot of random sub-projects, too,
+and is appropriate for fleshing out ideas about interpreter design,
+especially for Forth or PostScript-like languages,
+and especially for TScript34.2-based languages!
 
 If something outgrows TScript34, it could get its own TOG Software Project number.
 
-This is too ambiguous.  I might standardize on 'everything is a TOG
-Software Project', but using high numbers with lots of digits
-for probably-throwaway things.
+I may eventually standardize on 'everything gets a TOG Software Project number'
+(i.e. `"TOGSOFT-" + some number`), possibly with dedicated sub-ranges
+for numbered subprojects of SynthGen2100, Scratch38, and TScript34,
+and using high numbers with lots of digits for other probably-throwaway things.
 
 
 ### Projbase Metadata
@@ -115,7 +129,9 @@ rather than coming up with a 'nice' name right away.
 They can always be aliased together later.
 
 Current recommendation is when you need a quick name,
-make up a tag like `tag:nuke24.net,2026-08-01:aQuickName`
+make up a tag like `tag:nuke24.net,2026-08-23:somequickname`
+(or `tag:nuke24.net,2026-08:thisonemightoutlastthemonth:` for slightly less-quick ones)
+using colons as a 'path separator'.
 
 I no longer recommend names like `http://ns.nuke24.net/X-2024/Whatever`
 for experimental namespaces.
