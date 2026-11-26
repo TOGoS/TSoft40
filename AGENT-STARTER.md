@@ -35,7 +35,11 @@ Read the files matching the language(s) and framework(s) in play:
 - [2026/ai-coding/java-style-guide.md](2026/ai-coding/java-style-guide.md)
   - Java identifier naming, member ordering, layout.
 
-More language- and framework-specific files are planned (Deno / TypeScript, etc.) but not yet written;
+- [2026/ai-coding/typescript-style-guide.md](2026/ai-coding/typescript-style-guide.md)
+  - Deno/TypeScript: type-vs-interface usage, module/test file
+    conventions (including `.io.test.ts` for I/O tests), testing.
+
+More language- and framework-specific files are planned (etc.) but not yet written;
 you might check the directory itself for what exists in case we fail to update this file.
 
 Where a language- or framework-specific file conflicts with the general rules,

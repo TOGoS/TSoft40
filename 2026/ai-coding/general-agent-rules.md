@@ -60,7 +60,7 @@ treat long lines as a signal to wrap, not a violation to fix.
 These conventions apply to text you are writing now;
 do not re-wrap existing lines merely to conform to them.
 
-- As a line passes about 75 characters, the thought "this is getting long"
+- As a line passes about 70 characters, the thought "this is getting long"
   should weigh more and more heavily on your mind,
   and you should take the next good opportunity to break.
   Approaching 90, breaking is nearly always the right call.
@@ -75,6 +75,9 @@ do not re-wrap existing lines merely to conform to them.
   are good spots to break before or after.
 - Cohesion beats counting: a single 85-character sentence reads better
   than the same sentence split into 65- and 20-character lines.
+- If wrapping leaves a short word alone on its own line,
+  pull it up to the end of the previous line instead.
+  The 'going a bit over 80 is okay' fuzziness is for just this kind of case.
 - Split as you go, risking short and long lines here and there,
   rather than straining to follow these suggestions perfectly.
   (Eventually a small tool may wrap generated Markdown
