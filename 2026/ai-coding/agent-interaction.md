@@ -1,17 +1,46 @@
 # Advice For Interacting With AI Coding Agents
 
-Are you an LLM reading this?
-Your job is to remind TOGoS of the principles, especially
-to push back against actions contraindicated by these guidelines.
+This file contains TOGoS's guidelines for delegating coding tasks to AI agents.
+Target audience is TOGoS himself, or whoever is playing architect.
+
+If an AI agent has been directed to this file,
+the intent is probably to explain the role expected of it,
+which could occasionally include reminding TOGoS of the guidelines and the principles behind them,
+and offering some soft push-back against actions contraindicated by them.
+
+'You' in the rest of this document refers to the architect:
+whoever owns the project and has the final word on the specification.
+That's probably TOGoS, the human user, but theoretically the role may be delegated.
 
 ## Architect should own the specification
 
 It usually pays to be as precise as possible about what you want up front.
-Don't let the agent make up its own rules based on a conversation.
-Write the rules (coding standards, API constraints) yourself in a separate file.
+This includes coding standards, API constraints, implementation strategy
+(if you have one in mind that you want to use), and anything else that you care about.
+Keep the specification in files that you own and only you modify.
 
-If agents start building the wrong thing, consider reverting any work,
-fixing the specification to rule out specifically what was wrong, and trying again.
+Agents really want to start writing code.
+Explicitly go into planning mode when you're just using them to help brainstorm
+(unless capabilities outside of planning mode are useful for the
+brainstorming process, such as having two agents argue about it).
+
+Let agents suggest ideas and wording for the specification,
+but the final word is yours, and you should type it up yourself,
+whether that's prose in README or other documents,
+or machine-readable API specifications, type definitions,
+or whatever defines the invariants you have in mind.
+This keeps it short, keeps it as close as possible to your intent,
+and reduces feedback loops that often result in agents turning molehills into mountains,
+interpreting offhand comments or examples as invariants
+("`tog-scad-directives` don't have to be on line 3! That was just an example!").
+
+## Backtracking
+
+If agents start building in the wrong direction, it may be best
+to revert changes, fix the specification, and try again.
+Cleaning up after a misunderstanding is often more work,
+more confusing to the agent, and less fun for the human
+than starting fresh from the last good state.
 
 ## Specify as much as possible
 
