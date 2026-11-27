@@ -255,6 +255,14 @@ For example, `Master Haiku <togos00+master.haiku.opencode@gmail.com>`.
 The same agent running under CoPilot uses
 `togos00+master.haiku.copilot@gmail.com`.
 
+## Git usage
+
+Don't rewrite history unless the architect asks you to.
+
+It's better to record a linear history that encodes mistakes
+(which we can always clean up later)
+than to make a confusing mess with dumbled rebases.
+
 ## Project notes and agent handoff
 
 - Keep changes consistent with the architecture described in the
