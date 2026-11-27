@@ -11,6 +11,11 @@ If you are an agent reading this: load the relevant instruction files listed bel
 preferrably in parallel, not one after another --
 then proceed with the task you were given.
 
+## How to work with agents
+
+For some suggestions-to-self, see [2026/ai-coding/agent-interaction.md](./2026/ai-coding/agent-interaction.md).
+It may be useful if agents also grok that.
+
 ## How to invoke it
 
 Paste something like this into an agent session:
