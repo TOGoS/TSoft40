@@ -6,11 +6,9 @@ conventions for starting projects, and so on.
 - README.md (this file) :: General high-level description of my approach
   and the overall trans-project architecture I have in mind.
 - [AGENT-STARTER.md](./AGENT-STARTER.md) ::
-  A starting point at which to point coding agents to
-  get them started either on an existing project or to bootstrap a new one.
-- Dated `YYYY/` subdirectories :: working material, namespaced by year so
-  the root stays uncluttered; the year hints at *creation* date, so
-  `2026/` stuff is fair game in 2030 (and beyond)
+  A starting point for coding agents helping me on projects.
+- Dated `YYYY/` subdirectories :: 'working material', namespaced by year
+  so that I can dump notes in there without worrying about cluttering the root directory.
 
 ## General approach
 
@@ -41,20 +39,33 @@ conventions for starting projects, and so on.
 
 ### Process concepts
 
-`InputType ->{effects} OutputType` can be used as a
-lowest-common-denominator to describe everything else.
+`InputType ->{effects} OutputType` (borrowing Unison's syntax)
+can be used as a lowest-common-denominator to describe everything else:
 
 - Functions with side-effects
 - Pure functions
   - A special case of function-with-side-effects whose list of
     possible effects is empty
   - Single argument, single return value
-  - Multiple, possibly named arguments
-  - Multiple, possibly named return values
-    (think continuation passing style; returning and calling are the same kind of thing)
+- Functions with complex calling conventions
+  - e.g.:
+    - Multiple, possibly named arguments
+    - Multiple, possibly named return values
+      (think continuation passing style; returning and calling are the same kind of thing)
+  - Can be represented by cramming the inputs in outputs into a structure,
+    and passing and returning *that*.
+  - Multiple arguments by currying is well and good,
+    but doesn't solve named arguments or multiple return values,
+    so isn't useful for general mapping of function calls from languages where
+    functions have multiple/named arguments into our  `I ->{E} O` system.
+  - Continuation-passing style can be a compiler target, bit pure functions
+    are more fundamental for description; we need to be able to talk about
+    function calls to descrube a CPS interpreter!
 - Stack operations
-  - Which can be thought of as functions that take a stack and return a stack,
-    with or without side-effects
+  - Conceptually: `Stack ->{optional effects} -> Stack`.
+  - Stack may actually be more strongly typed so that a list of stack
+    ops can be losslessly translated to a function that does
+    not have to mention the stack (Joy and maybe Factor are like this, I think?).
 - Stream processes
   - `ProtoProcess = () ->{Read,Write,...} Int32`
   - Those that eat bytes, emit bytes, and finally exit with some error code
